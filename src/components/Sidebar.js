@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
@@ -10,17 +10,32 @@ const Sidebar = () => {
       <aside
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
       >
-        <button type="button" onClick={() => setIsSidebarOpen(false)}>
-          <div className="line line1"></div>
-          <div className="line line2"></div>
-        </button>
-        <Link to="/" className="logo">
-          All The Views
-        </Link>
-        <Link to="/about" className="link">
+        <header>
+          <Link
+            to="/"
+            className={`${isSidebarOpen ? "logo fade" : "logo"}`}
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            All The Views
+          </Link>
+          <button type="button" onClick={() => setIsSidebarOpen(false)}>
+            <div className="line line1"></div>
+            <div className="line line2"></div>
+          </button>
+        </header>
+
+        <Link
+          to="/about"
+          className="link"
+          onClick={() => setIsSidebarOpen(false)}
+        >
           About
         </Link>
-        <Link to="/places" className="link">
+        <Link
+          to="/places"
+          className="link"
+          onClick={() => setIsSidebarOpen(false)}
+        >
           Places
         </Link>
       </aside>
@@ -31,11 +46,12 @@ const Sidebar = () => {
 const Wrapper = styled.div`
   .sidebar {
     position: fixed;
+    width: 100%;
     right: 0;
-    padding: 30px;
+    padding: 30px 50px;
     z-index: -1;
     height: 100vh;
-    background-color: gray;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +62,11 @@ const Wrapper = styled.div`
     z-index: 999;
     transform: translateX(0);
   }
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   button {
     margin-bottom: 40px;
     width: 50px;
@@ -55,7 +76,7 @@ const Wrapper = styled.div`
     position: relative;
     .line {
       width: 100%;
-      border-top: 5px solid white;
+      border-top: 5px solid var(--black);
       position: absolute;
     }
     .line1 {
@@ -72,20 +93,31 @@ const Wrapper = styled.div`
   }
 
   a {
+    color: var(--black);
     text-decoration: none;
     margin-bottom: 50px;
   }
   .logo {
-    color: white;
+    opacity: 0;
     font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: -0.1rem;
+    font-weight: 100;
+    letter-spacing: -0.15rem;
+  }
+  .fade {
+    animation: 2s fade-in forwards;
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .link {
-    color: white;
     font-size: 1.5rem;
     font-weight: 300;
-    letter-spacing: -0.1rem;
+    letter-spacing: 0.1rem;
   }
 
   @media (min-width: 768px) {

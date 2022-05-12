@@ -4,8 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --black: rgb(36, 41, 36);
+  --green: rgb(47, 75, 47);
+  --white: rgb(244, 241, 237);
+  --off-white: rgb(235, 225, 214);
+}
+
 body {
-  margin: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

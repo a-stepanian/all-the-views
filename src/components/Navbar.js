@@ -33,29 +33,27 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 30px 50px;
-  background-color: rgba(0, 0, 0, 0.1);
   .links {
     display: flex;
     align-items: flex-end;
     a {
       text-decoration: none;
+      color: var(--white);
     }
 
     .logo {
       margin-right: 100px;
-      color: white;
       font-size: 2rem;
-      font-weight: 300;
+      font-weight: 100;
       letter-spacing: -0.1rem;
     }
 
     .link {
       margin-right: 50px;
       display: none;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: -0.1rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
     }
   }
 
@@ -67,7 +65,7 @@ const Wrapper = styled.nav`
     position: relative;
     .line {
       width: 100%;
-      border-top: 5px solid white;
+      border-top: 5px solid var(--white);
       position: absolute;
     }
     .line1 {
@@ -86,8 +84,10 @@ const Wrapper = styled.nav`
   }
 
   @media (min-width: 768px) {
-    .link {
-      display: block;
+    .links {
+      .link {
+        display: block;
+      }
     }
     button {
       display: none;
