@@ -143,7 +143,7 @@ const Wrapper = styled.main`
   }
   @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: 560px 1fr 4%;
+    grid-template-columns: 560px 1fr 60px;
     .hero {
       margin-top: none;
     }
@@ -198,22 +198,24 @@ const Wrapper = styled.main`
     }
     .icon-wrapper {
       width: 100%;
-      height: 80%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: flex-end;
       color: var(--green);
       .icon {
+        margin: 7px;
         font-size: 1.8rem;
       }
       .atv {
+        margin: 7px;
         font-size: 1rem;
         font-weight: 500;
         letter-spacing: -0.1rem;
       }
       .vertical-line {
-        height: 60%;
+        height: 80%;
         width: 10px;
         background-color: var(--green);
         opacity: 0.3;
