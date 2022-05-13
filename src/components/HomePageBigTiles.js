@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const HomePageBigTiles = () => {
+  const { setPageSelected } = useGlobalContext();
   return (
     <Wrapper>
       <Link to="/places/msh" className="card">
@@ -20,7 +22,11 @@ const HomePageBigTiles = () => {
         </h4>
         <img src="/img-metalake.jpg" alt="Meta Lake" />
       </Link>
-      <Link to="/places" className="card">
+      <Link
+        to="/places"
+        className="card"
+        onClick={() => setPageSelected("places")}
+      >
         <h4>
           See all locations...
           <GoArrowRight className="arrow" />

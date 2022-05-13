@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LogoColumnBigScreen from "../components/LogoColumnBigScreen";
+import data from "../data";
 
 const Places = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Wrapper>
       <aside>
@@ -13,27 +19,17 @@ const Places = () => {
         </div>
       </aside>
       <section>
-        <article className="card">
-          <img src="./img-metalake.jpg" alt="Meta Lake and Mount Adams" />
-          <footer>
-            <p>Meta Lake and Mount Adams</p>
-          </footer>
-        </article>
-        <article className="card">
-          <img
-            src="./img-norwaypass.jpg"
-            alt="Mount St. Helens from Norway Pass"
-          />
-          <footer>
-            <p>Mount St. Helens from Norway Pass</p>
-          </footer>
-        </article>
-        <article className="card">
-          <img src="./img-spiritlake.jpg" alt="Spirit Lake from Windy Ridge" />
-          <footer>
-            <p>Spirit Lake from Windy Ridge</p>
-          </footer>
-        </article>
+        {data.map((place) => {
+          const { id, title, location, img, description } = place;
+          return (
+            <Link to={`/places/${id}`} className="card" key={id}>
+              <img src={img} alt={title} />
+              <footer>
+                <p>{title}</p>
+              </footer>
+            </Link>
+          );
+        })}
       </section>
       <LogoColumnBigScreen />
     </Wrapper>
