@@ -73,7 +73,52 @@ const Wrapper = styled.main`
     background-size: cover;
     background-position: center;
     .info-card-wrapper {
-      display: none;
+     display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 0;
+        background-color: rgb(0, 0, 0, 0.8);
+        width: 100%;
+        height: 260px;
+        .card {
+          margin: 5px;
+          width: 240px;
+          height: 180px;
+          position: relative;
+          h4 {
+            transition: 0.2s;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--white);
+            position: absolute;
+            top: 0;
+            .arrow {
+              position: absolute;
+              top: 0;
+              right: 15px;
+              opacity: 0;
+              transition: 0.2s;
+              font-size: 1.3rem;
+            }
+          }
+          img {
+            object-fit: cover;
+            max-height: 100%;
+          }
+        }
+        .card:hover h4 {
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 10px;
+          .arrow {
+            top: 10px;
+            opacity: 1;
+          }
+        }
+      }
     }
   }
   .icon-wrapper {
