@@ -2,19 +2,26 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
-  return <Wrapper>All The Views &copy; 2022</Wrapper>;
+  return (
+    <Wrapper>
+      <h2>Check out the repo on GitHub</h2>
+      <h2>View my portfolio</h2>
+      <h2>Connect with me on LinkedIn</h2>
+      <p>All The Views &copy; 2022</p>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.footer`
-  width: 100%;
-  height: 150px;
-  padding: 20px;
+  padding: 100px 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   background-color: var(--off-white);
-  font-weight: 100;
+  p {
+    font-weight: 100;
+  }
 `;
 
 export default Footer;

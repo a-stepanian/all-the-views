@@ -45,7 +45,7 @@ const Wrapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 30px 50px;
+  padding: 28px;
   .links {
     display: flex;
     align-items: flex-end;

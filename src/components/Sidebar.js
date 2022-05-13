@@ -2,22 +2,17 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import { GiMountains, GiPhotoCamera, GiPineTree } from "react-icons/gi";
 
 const Sidebar = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+  const { isSidebarOpen, setIsSidebarOpen, setPageSelected } =
+    useGlobalContext();
   return (
     <Wrapper>
       <aside
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
       >
         <header>
-          <Link
-            to="/"
-            className={`${isSidebarOpen ? "logo fade" : "logo"}`}
-            onClick={() => setIsSidebarOpen(false)}
-          >
-            All The Views
-          </Link>
           <button type="button" onClick={() => setIsSidebarOpen(false)}>
             <div className="line line1"></div>
             <div className="line line2"></div>
@@ -25,19 +20,42 @@ const Sidebar = () => {
         </header>
 
         <Link
+          to="/"
+          className="link"
+          onClick={() => {
+            setIsSidebarOpen(false);
+            setPageSelected(null);
+          }}
+        >
+          Home
+        </Link>
+        <Link
           to="/about"
           className="link"
-          onClick={() => setIsSidebarOpen(false)}
+          onClick={() => {
+            setIsSidebarOpen(false);
+            setPageSelected("about");
+          }}
         >
           About
         </Link>
         <Link
           to="/places"
           className="link"
-          onClick={() => setIsSidebarOpen(false)}
+          onClick={() => {
+            setIsSidebarOpen(false);
+            setPageSelected("places");
+          }}
         >
           Places
         </Link>
+        <div className="icon-wrapper">
+          <h3 className="atv">ATV</h3>
+          <GiMountains className="icon" />
+          <GiPhotoCamera className="icon" />
+          <GiPineTree className="icon" />
+          <div className="vertical-line"></div>
+        </div>
       </aside>
     </Wrapper>
   );
@@ -48,7 +66,6 @@ const Wrapper = styled.div`
     position: fixed;
     width: 100%;
     right: 0;
-    padding: 30px 50px;
     z-index: -1;
     height: 100vh;
     background-color: var(--white);
@@ -56,7 +73,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
-    transition: 0.5s;
+    transition: 0.2s;
   }
   .show-sidebar {
     z-index: 999;
@@ -65,10 +82,11 @@ const Wrapper = styled.div`
   header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   button {
-    margin-bottom: 40px;
+    z-index: 999;
+    margin: 5px;
     width: 50px;
     height: 50px;
     border: none;
@@ -76,7 +94,7 @@ const Wrapper = styled.div`
     position: relative;
     .line {
       width: 100%;
-      border-top: 5px solid var(--black);
+      border-top: 5px solid var(--off-white);
       position: absolute;
     }
     .line1 {
@@ -95,24 +113,7 @@ const Wrapper = styled.div`
   a {
     color: var(--black);
     text-decoration: none;
-    margin-bottom: 50px;
-  }
-  .logo {
-    opacity: 0;
-    font-size: 2rem;
-    font-weight: 100;
-    letter-spacing: -0.15rem;
-  }
-  .fade {
-    animation: 2s fade-in forwards;
-  }
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    margin: 50px 0;
   }
   .link {
     font-size: 1.5rem;
@@ -120,7 +121,36 @@ const Wrapper = styled.div`
     letter-spacing: 0.1rem;
   }
 
-  @media (min-width: 768px) {
+  .icon-wrapper {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .icon {
+      margin: 7px;
+      font-size: 1.8rem;
+    }
+    .atv {
+      margin: 7px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: -0.1rem;
+    }
+    .vertical-line {
+      height: 20%;
+      width: 10px;
+      background-color: var(--green);
+      opacity: 0.5;
+    }
+  }
+
+  @media (min-width: 900px) {
     display: none;
   }
 `;
