@@ -113,7 +113,7 @@ const Wrapper = styled.main`
           }
           33% {
             background-color: var(--off-white);
-            height: 80%;
+            height: 0;
           }
           100% {
             background-color: var(--off-white);

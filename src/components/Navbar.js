@@ -4,17 +4,30 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 const Navbar = () => {
-  const { setIsSidebarOpen } = useGlobalContext();
+  const { setIsSidebarOpen, pageSelected, setPageSelected } =
+    useGlobalContext();
   return (
     <Wrapper>
       <div className="links">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={() => setPageSelected(null)}>
           All The Views
         </Link>
-        <Link to="/about" className="link">
+        <Link
+          to="/about"
+          className={`${
+            pageSelected === "about" ? "link link-selected" : "link"
+          }`}
+          onClick={() => setPageSelected("about")}
+        >
           About
         </Link>
-        <Link to="/places" className="link">
+        <Link
+          to="/places"
+          className={`${
+            pageSelected === "places" ? "link link-selected" : "link"
+          }`}
+          onClick={() => setPageSelected("places")}
+        >
           Places
         </Link>
       </div>
@@ -56,8 +69,11 @@ const Wrapper = styled.nav`
       letter-spacing: 0.1rem;
       border-bottom: 3px solid transparent;
     }
+    .link-selected {
+      border-color: var(--white);
+    }
     .link:hover {
-      border-color: 3px solid var(--white);
+      border-color: var(--light-green);
     }
   }
 
@@ -87,7 +103,7 @@ const Wrapper = styled.nav`
     cursor: pointer;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     .links {
       .link {
         display: block;
