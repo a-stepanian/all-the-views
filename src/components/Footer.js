@@ -13,7 +13,8 @@ const Wrapper = styled.footer`
   justify-content: center;
   align-items: flex-end;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--off-white);
+  font-weight: 100;
 `;
 
 export default Footer;

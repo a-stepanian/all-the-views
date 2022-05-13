@@ -52,8 +52,12 @@ const Wrapper = styled.nav`
       margin-right: 50px;
       display: none;
       font-size: 1.2rem;
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 0.1rem;
+      border-bottom: 3px solid transparent;
+    }
+    .link:hover {
+      border-color: 3px solid var(--white);
     }
   }
 
