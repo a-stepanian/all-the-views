@@ -37,7 +37,6 @@ const Places = () => {
 };
 
 const Wrapper = styled.main`
-  background-color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,13 +72,16 @@ const Wrapper = styled.main`
   }
   section {
     padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr;
     .card {
+      z-index: 999;
       margin-bottom: 20px;
       padding: 5px;
       border-radius: 5px;
-      background-color: var(--white);
+      background-color: var(--off-white);
+      text-decoration: none;
       img {
         max-width: 100%;
       }
@@ -90,12 +92,20 @@ const Wrapper = styled.main`
         justify-content: center;
         align-items: center;
         p {
+          text-align: center;
           font-weight: 500;
           color: var(--black);
         }
       }
     }
+    .card:hover {
+      background-color: var(--light-green);
+    }
   }
+
+  /* ------------- */
+  /* Media Queries */
+  /* ------------- */
 
   @media (min-width: 320px) {
     .text-box {
@@ -103,10 +113,17 @@ const Wrapper = styled.main`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 600px) {
+    section {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+  }
+
+  @media (min-width: 768px) {
     background-color: var(--dark-green);
     display: grid;
-    grid-template-columns: 560px 1fr 60px;
+    grid-template-columns: 500px 1fr 60px;
     align-items: start;
     aside {
       height: 100vh;
@@ -125,13 +142,21 @@ const Wrapper = styled.main`
       }
     }
     section {
+      padding: 10px;
+      grid-template-columns: 1fr;
       height: auto;
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1100px) {
     section {
-      padding: 100px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    section {
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 `;

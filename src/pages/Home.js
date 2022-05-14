@@ -17,9 +17,7 @@ const Home = () => {
           </p>
         </div>
       </aside>
-      <div className="img">
-        <HomePageBigTiles />
-      </div>
+      <div className="img">{/* <HomePageBigTiles /> */}</div>
       <LogoColumnBigScreen />
     </Wrapper>
   );
@@ -30,6 +28,7 @@ const Wrapper = styled.main`
   background-color: var(--black);
   display: flex;
   flex-direction: column;
+  align-items: center;
   aside {
     margin-top: 100px;
     background-color: var(--black);
@@ -64,7 +63,7 @@ const Wrapper = styled.main`
     position: relative;
     width: 100%;
     min-height: 400px;
-    background-image: url("/img-metalake.jpg");
+    background-image: url("/img-pinnaclepeak.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -77,7 +76,8 @@ const Wrapper = styled.main`
 
   @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: 560px 1fr 60px;
+    grid-template-columns: 500px 1fr 60px;
+    align-items: normal;
     aside {
       height: 100vh;
       margin-top: 0;

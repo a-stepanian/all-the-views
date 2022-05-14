@@ -55,8 +55,7 @@ const Wrapper = styled.nav`
     }
 
     .logo {
-      margin-right: 100px;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 100;
       letter-spacing: -0.1rem;
     }
@@ -103,8 +102,11 @@ const Wrapper = styled.nav`
     cursor: pointer;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     .links {
+      .logo {
+        margin-right: 100px;
+      }
       .link {
         display: block;
       }
