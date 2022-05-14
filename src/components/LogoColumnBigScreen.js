@@ -25,16 +25,15 @@ const Wrapper = styled.div`
   @media (min-width: 768px) {
     display: block;
     width: 100%;
-    height: 100vh;
     background-color: var(--black);
     a {
+      height: 75vh;
       text-decoration: none;
       color: var(--green);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
-      height: 100vh;
       .icon {
         margin: 7px;
         font-size: 1.8rem;

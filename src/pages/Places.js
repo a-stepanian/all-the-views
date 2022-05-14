@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LogoColumnBigScreen from "../components/LogoColumnBigScreen";
 import data from "../data";
+import { useGlobalContext } from "../context";
 
 const Places = () => {
+  const { setCurrentPage } = useGlobalContext();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,7 +24,12 @@ const Places = () => {
         {data.map((place) => {
           const { id, title, location, img, description } = place;
           return (
-            <Link to={`/places/${id}`} className="card" key={id}>
+            <Link
+              to={`/places/${id}`}
+              className="card"
+              key={id}
+              onClick={() => setCurrentPage(null)}
+            >
               <img src={img} alt={title} />
               <footer>
                 <p>{title}</p>
@@ -30,6 +37,34 @@ const Places = () => {
             </Link>
           );
         })}
+        {data.map((place) => {
+          const { id, title, thumb } = place;
+          return (
+            <Link
+              to={`/places/${id}`}
+              className="card"
+              key={id}
+              onClick={() => setCurrentPage(null)}
+            >
+              <img src={thumb} alt={title} />
+              <footer>
+                <p>{title}</p>
+              </footer>
+            </Link>
+          );
+        })}
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Back to Top
+        </button>
       </section>
       <LogoColumnBigScreen />
     </Wrapper>
@@ -37,12 +72,14 @@ const Places = () => {
 };
 
 const Wrapper = styled.main`
+  background-color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /* Choose a location small screen */
   aside {
     margin-top: 100px;
-    background-color: var(--black);
     .text-box {
       padding: 20px;
       display: flex;
@@ -70,36 +107,50 @@ const Wrapper = styled.main`
       }
     }
   }
+  /* Places tiles small screen */
   section {
     padding: 100px 20px;
-    background-color: var(--white);
+    background-color: var(--black);
     display: grid;
     grid-template-columns: 1fr;
     .card {
+      position: relative;
       z-index: 999;
-      margin-bottom: 20px;
-      padding: 5px;
-      border-radius: 5px;
-      background-color: var(--off-white);
+      margin-bottom: 5px;
+      padding: 3px;
+      background-color: white;
+      border-radius: 3px;
       text-decoration: none;
+      overflow: hidden;
       img {
+        border-radius: 3px;
+        display: block;
         max-width: 100%;
       }
       footer {
-        height: 50px;
-        background-color: var(--off-white);
+        width: calc(100% - 6px);
+        position: absolute;
+        bottom: 3px;
+        height: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.7);
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 0.2s;
+        border-radius: 0 0 3px 3px;
         p {
           text-align: center;
           font-weight: 500;
-          color: var(--black);
+          color: var(--white);
         }
       }
     }
     .card:hover {
-      background-color: var(--light-green);
+      footer {
+        height: 50px;
+        opacity: 1;
+      }
     }
   }
 
@@ -121,7 +172,6 @@ const Wrapper = styled.main`
   }
 
   @media (min-width: 768px) {
-    background-color: var(--dark-green);
     display: grid;
     grid-template-columns: 500px 1fr 60px;
     align-items: start;
@@ -142,7 +192,8 @@ const Wrapper = styled.main`
       }
     }
     section {
-      padding: 10px;
+      background-color: rgba(100, 200, 240, 0.5);
+      padding: 10px 10px 200px 10px;
       grid-template-columns: 1fr;
       height: auto;
     }

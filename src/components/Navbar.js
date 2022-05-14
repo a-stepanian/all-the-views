@@ -13,15 +13,6 @@ const Navbar = () => {
           All The Views
         </Link>
         <Link
-          to="/about"
-          className={`${
-            pageSelected === "about" ? "link link-selected" : "link"
-          }`}
-          onClick={() => setPageSelected("about")}
-        >
-          About
-        </Link>
-        <Link
           to="/places"
           className={`${
             pageSelected === "places" ? "link link-selected" : "link"
@@ -72,7 +63,8 @@ const Wrapper = styled.nav`
       border-color: var(--white);
     }
     .link:hover {
-      border-color: var(--light-green);
+      text-shadow: 0 0 2px var(--light-green);
+      color: var(--light-green);
     }
   }
 
