@@ -197,16 +197,6 @@ const Wrapper = styled.main`
     }
   }
 
-  @media (min-width: 768px) {
-    section {
-      .card {
-        img {
-          max-height: 250px;
-        }
-      }
-    }
-  }
-
   @media (min-width: 900px) {
     display: grid;
     grid-template-columns: 380px 1fr 60px;

@@ -4,9 +4,15 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-      <h2>Check out the repo on GitHub</h2>
-      <h2>View my portfolio</h2>
-      <h2>Connect with me on LinkedIn</h2>
+      <a href="https://github.com/a-stepanian/all-the-views" target={"_blank"}>
+        Check out the repo on GitHub
+      </a>
+      <a href="#" target={"_blank"}>
+        View my portfolio
+      </a>
+      <a href="#" target={"_blank"}>
+        Connect with me on LinkedIn
+      </a>
       <p>All The Views &copy; 2022</p>
     </Wrapper>
   );

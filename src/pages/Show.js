@@ -36,10 +36,7 @@ const Show = () => {
           Hide Info <BiHide />
         </button>
         <p>
-          {view.description} <span>Note: {view.season}</span>
-        </p>
-        <p>
-          Additional Information about the hike can be found at{" "}
+          {view.description} <span>Note: {view.season}</span> Additional info at{" "}
           <a target="_blank" href={view.url}>
             {view.url}
           </a>
@@ -77,6 +74,9 @@ const Wrapper = styled.main`
       span {
         background-color: rgba(255, 0, 0, 0.3);
       }
+      a {
+        color: var(--white);
+      }
     }
   }
   img {
@@ -84,14 +84,9 @@ const Wrapper = styled.main`
   }
   @media (min-width: 900px) {
     article {
+      max-width: 100%;
       position: absolute;
       background-color: rgba(0, 0, 0, 0.7);
-      width: 0;
-      overflow: hidden;
-      transition: 0.5s;
-    }
-    article:hover {
-      width: 700px;
     }
   }
 `;
