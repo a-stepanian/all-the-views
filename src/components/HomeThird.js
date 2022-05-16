@@ -7,7 +7,7 @@ const HomeThird = () => {
     <Wrapper>
       <LogoColumnBigScreen />
       <div className="img"></div>
-      <aside>
+      <aside className="find-your-view-container">
         <div className="text-box">
           <h2>Find your picture perfect view</h2>
           <div className="accent-line"></div>
@@ -26,7 +26,7 @@ const Wrapper = styled.main`
   background-color: var(--black);
   display: flex;
   flex-direction: column-reverse;
-  aside {
+  .find-your-view-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,6 +41,7 @@ const Wrapper = styled.main`
         line-height: 3.6rem;
         color: var(--white);
         text-align: center;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
       }
       .accent-line {
         width: 100px;
@@ -74,7 +75,7 @@ const Wrapper = styled.main`
     display: grid;
     grid-template-columns: 60px 1fr 500px;
     align-items: normal;
-    aside {
+    .find-your-view-container {
       margin-top: 0;
       padding-left: 20px;
       align-items: left;

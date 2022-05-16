@@ -9,9 +9,10 @@
   --dark-green: rgb(30, 48, 30);
   --green: rgb(47, 75, 47);
   --light-green: rgb(93, 135, 93);
-  --bright-green: rgb(151, 255, 151);
+  --bright-green: rgb(123, 204, 123);
   --white: rgb(244, 241, 237);
   --off-white: rgb(222, 211, 199);
+  --off-white2:rgb(230, 205, 178);
 }
 
 body {

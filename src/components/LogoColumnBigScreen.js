@@ -9,53 +9,43 @@ const LogoColumnBigScreen = () => {
 
   return (
     <Wrapper>
-      <Link to="/about" onClick={() => setPageSelected("about")}>
-        <h3 className="atv">ATV</h3>
-        <GiMountains className="icon" />
-        <GiPhotoCamera className="icon" />
-        <GiPineTree className="icon" />
-        <div className="vertical-line"></div>
-      </Link>
+      <h3 className="atv">ATV</h3>
+      <GiMountains className="icon" />
+      <GiPhotoCamera className="icon" />
+      <GiPineTree className="icon" />
+      <div className="vertical-line"></div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.aside`
   display: none;
   @media (min-width: 768px) {
     display: block;
-    width: 100%;
+    width: 60px;
     background-color: var(--black);
-    a {
-      height: 75vh;
-      text-decoration: none;
-      color: var(--green);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      .icon {
-        margin: 7px;
-        font-size: 1.8rem;
-      }
-      .atv {
-        margin: 7px;
-        font-size: 1rem;
-        font-weight: 500;
-        letter-spacing: -0.1rem;
-      }
-      .vertical-line {
-        height: 20%;
-        width: 10px;
-        background-color: var(--green);
-        opacity: 0.3;
-      }
+    height: 100vh;
+    text-decoration: none;
+    color: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .icon {
+      margin: 7px;
+      font-size: 1.8rem;
     }
-    a:hover {
-      color: var(--light-green);
-      .vertical-line {
-        background-color: var(--light-green);
-      }
+    .atv {
+      margin: 7px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: -0.1rem;
+    }
+    .vertical-line {
+      height: 20%;
+      width: 10px;
+      background-color: var(--green);
+      opacity: 0.3;
     }
   }
 `;

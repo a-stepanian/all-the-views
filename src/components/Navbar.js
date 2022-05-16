@@ -1,32 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import { AiFillCaretRight } from "react-icons/ai";
+import HamburgerButton from "./HamburgerButton";
 
 const Navbar = () => {
-  const { setIsSidebarOpen, pageSelected, setPageSelected } =
-    useGlobalContext();
+  const {
+    isSidebarOpen,
+    setIsSidebarOpen,
+    currentPage,
+    setCurrentPage,
+    location,
+    setLocation,
+    view,
+    setView,
+  } = useGlobalContext();
+
   return (
     <Wrapper>
-      <div className="links">
-        <Link to="/" className="logo" onClick={() => setPageSelected(null)}>
+      <div className="all-links">
+        <Link to="/" className="logo" onClick={() => setCurrentPage(null)}>
           All The Views
         </Link>
-        <Link
-          to="/places"
-          className={`${
-            pageSelected === "places" ? "link link-selected" : "link"
-          }`}
-          onClick={() => setPageSelected("places")}
-        >
-          Places
-        </Link>
+        <div className="link-wrapper">
+          <Link
+            to="/places"
+            className={`${
+              currentPage === "places" ? "link link-selected" : "link"
+            }`}
+          >
+            Places
+          </Link>
+        </div>
+
+        {location && (
+          <div className="link-wrapper">
+            <AiFillCaretRight className="arrow" />
+            <Link
+              to={`places/${location.urlLoc}`}
+              className={`${
+                currentPage === "location"
+                  ? "link location link-selected"
+                  : "location link"
+              }`}
+            >
+              {location.shortLoc}
+            </Link>
+          </div>
+        )}
+        {view && (
+          <div className="link-wrapper">
+            <AiFillCaretRight className="arrow" />
+            <Link
+              to={`places/${location.urlLoc}/${view.id}`}
+              className={`${
+                currentPage === "view"
+                  ? "link location link-selected"
+                  : "location link"
+              }`}
+            >
+              {`${view.title.slice(0, 20)}...`}
+            </Link>
+          </div>
+        )}
       </div>
-      <button type="button" onClick={() => setIsSidebarOpen(true)}>
-        <div className="line line1"></div>
-        <div className="line line2"></div>
-        <div className="line line3"></div>
-      </button>
+      <HamburgerButton />
     </Wrapper>
   );
 };
@@ -34,10 +73,11 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   position: absolute;
   width: 100%;
+  height: 96px;
   display: flex;
   justify-content: space-between;
   padding: 28px;
-  .links {
+  .all-links {
     display: flex;
     align-items: flex-end;
     a {
@@ -51,9 +91,11 @@ const Wrapper = styled.nav`
       letter-spacing: -0.1rem;
     }
 
-    .link {
-      margin-right: 50px;
+    .link-wrapper {
       display: none;
+    }
+    .link {
+      margin: 0 20px;
       font-size: 1.2rem;
       font-weight: 300;
       letter-spacing: 0.1rem;
@@ -63,48 +105,22 @@ const Wrapper = styled.nav`
       border-color: var(--white);
     }
     .link:hover {
-      text-shadow: 0 0 2px var(--light-green);
       color: var(--light-green);
     }
-  }
-
-  button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: transparent;
-    position: relative;
-    .line {
-      width: 100%;
-      border-top: 5px solid var(--white);
-      position: absolute;
-    }
-    .line1 {
-      top: 5px;
-    }
-    .line2 {
-      top: 15px;
-    }
-    .line3 {
-      top: 25px;
+    .arrow {
+      color: var(--off-white);
+      transform: translateY(0.2rem);
     }
   }
 
-  button:hover {
-    cursor: pointer;
-  }
-
-  @media (min-width: 768px) {
-    .links {
+  @media (min-width: 900px) {
+    .all-links {
+      .link-wrapper {
+        display: flex;
+      }
       .logo {
         margin-right: 100px;
       }
-      .link {
-        display: block;
-      }
-    }
-    button {
-      display: none;
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Places, Show, Error } from "./pages";
+import { Home, Places, Park, Show, Error } from "./pages";
 import { Navbar, Sidebar, Footer } from "./components";
 
 const App = () => {
@@ -11,7 +11,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="places" element={<Places />} />
-        <Route path="places/:id" element={<Show />} />
+        <Route path="places/:id" element={<Park />} />
+        <Route path="places/:id/:viewId" element={<Show />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

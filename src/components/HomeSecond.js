@@ -3,21 +3,22 @@ import styled from "styled-components";
 import LogoColumnBigScreen from "./LogoColumnBigScreen";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const HomeSecond = () => {
-  const { setPageSelected } = useGlobalContext();
+  const { setCurrentPage } = useGlobalContext();
   return (
     <Wrapper>
-      <aside>
+      <aside className="take-a-look-container">
         <div className="text-box">
           <h2>
             Take a look at our{" "}
             <Link
               to="/places"
               className="places"
-              onClick={() => setPageSelected("places")}
+              onClick={() => setCurrentPage("places")}
             >
-              places
+              places <BsFillArrowRightSquareFill className="arrow" />
             </Link>
           </h2>
           <div className="accent-line"></div>
@@ -35,33 +36,48 @@ const Wrapper = styled.main`
   background-color: var(--black);
   display: grid;
   grid-template-columns: 1fr;
-  aside {
+
+  .take-a-look-container {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .text-box {
       padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       h2 {
         font-size: 3.3rem;
         line-height: 3.6rem;
         color: var(--white);
         text-align: center;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+
         .places {
           font-size: 3.5rem;
           font-weight: 500;
-          color: var(--off-white);
+          color: var(--bright-green);
           letter-spacing: 0.05rem;
         }
+
+        .places:hover {
+          animation: bouncy 1s infinite;
+        }
+
+        .arrow {
+          transform: translate(10px, 8px);
+        }
       }
+
       .accent-line {
         width: 100px;
         margin: 40px 0 20px;
         border-top: 8px solid var(--green);
       }
+
       p {
         text-align: center;
         font-size: 1rem;
@@ -71,6 +87,7 @@ const Wrapper = styled.main`
       }
     }
   }
+
   .img {
     position: relative;
     width: 100%;
@@ -90,18 +107,34 @@ const Wrapper = styled.main`
     display: grid;
     grid-template-columns: 500px 1fr 60px;
     align-items: normal;
-    aside {
+
+    .take-a-look-container {
       padding-left: 20px;
       align-items: left;
+
       .text-box {
         align-items: flex-start;
+
         h2 {
           text-align: left;
         }
+
         p {
           text-align: left;
         }
       }
+    }
+  }
+
+  @keyframes bouncy {
+    0% {
+      letter-spacing: 0.1rem;
+    }
+    50% {
+      letter-spacing: 0.15rem;
+    }
+    100% {
+      letter-spacing: 0.1rem;
     }
   }
 `;

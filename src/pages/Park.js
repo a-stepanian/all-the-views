@@ -1,68 +1,62 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { LogoColumnBigScreen, Loading } from "../components";
+import { useParams } from "react-router-dom";
 import data from "../data";
+import { Link } from "react-router-dom";
+import { LogoColumnBigScreen, Loading } from "../components";
 import { useGlobalContext } from "../context";
+import Error from "./Error";
 
-const Places = () => {
-  const { setCurrentPage, setLocation, setView } = useGlobalContext();
+const Park = () => {
+  const { setCurrentPage, location, setLocation, setView } = useGlobalContext();
   const [isLoading, setIsLoading] = useState(true);
-  const [locationList, setLocationList] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const params = useParams();
 
-  const getUniqueLocations = () => {
-    // Make an array of the unique locations from the data
-    const allLocations = data.map((place) => place.location);
-    const uniquePlaces = new Set(allLocations);
-    // Find first place from the data with each unique location
-    // This will be so we can map over each unique location and display the image of that first place
-    const locationArray = []; // Array that will be used for rendering the unique parks/locations.
-    for (let location of uniquePlaces) {
-      const foundPlace = data.find((place) => place.location === location);
-      locationArray.push(foundPlace);
-    }
-    setLocationList(locationArray);
-  };
+  const views = data.filter((place) => {
+    return place.urlLoc === params.id;
+  });
 
   useEffect(() => {
     setIsLoading(true);
-    getUniqueLocations();
     window.scrollTo(0, 0);
-    setCurrentPage("places");
-    setLocation(null);
+    setCurrentPage("location");
+
+    const foundPlace = data.find((place) => place.urlLoc === params.id);
+    if (foundPlace) {
+      setLocation(foundPlace);
+    } else {
+      setIsError(true);
+    }
+
     setView(null);
     setIsLoading(false);
-  }, []);
+  }, [location]);
 
   if (isLoading) {
     return <Loading />;
+  }
+  if (isError) {
+    return <Error />;
   }
 
   return (
     <Wrapper>
       <aside className="instructions">
         <div className="text-box">
-          <h2>Choose a location</h2>
+          <h2>{location.location}</h2>
           <div className="accent-line"></div>
-          <p>Click on an image to learn more.</p>
+          <p>{location.locationDescription}</p>
         </div>
       </aside>
       <section>
-        {locationList.map((place) => {
-          const { id, urlLoc, location, thumb } = place;
+        {views.map((place) => {
+          const { id, urlLoc, title, thumb } = place;
           return (
-            <Link
-              to={`/places/${urlLoc}`}
-              className="card"
-              key={id}
-              onClick={() => {
-                setLocation(place);
-                setCurrentPage("location");
-              }}
-            >
-              <img src={thumb} alt={location} />
+            <Link to={`/places/${urlLoc}/${id}`} className="card" key={id}>
+              <img src={thumb} alt={title} />
               <footer>
-                <p>{location}</p>
+                <p>{title}</p>
               </footer>
             </Link>
           );
@@ -91,7 +85,7 @@ const Wrapper = styled.main`
   flex-direction: column;
   align-items: center;
 
-  /* Choose a location small screen */
+  /* Park info small screen */
   .instructions {
     margin-top: 100px;
     .text-box {
@@ -101,8 +95,8 @@ const Wrapper = styled.main`
       align-items: center;
       justify-content: center;
       h2 {
-        font-size: 3.3rem;
-        line-height: 3.6rem;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
         color: var(--white);
         text-align: center;
       }
@@ -115,39 +109,33 @@ const Wrapper = styled.main`
         margin-top: 20px;
         text-align: center;
         font-size: 1rem;
-        line-height: 1.4rem;
+        font-weight: 200;
+        line-height: 1.6rem;
         color: var(--white);
         letter-spacing: 0.1rem;
       }
     }
   }
-
   /* Places tiles small screen */
-
   section {
-    padding: 100px 30px;
-    width: 100%;
+    padding: 100px 20px;
     background-color: var(--black);
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 30px 30px;
-
     .card {
       position: relative;
       padding: 2px;
-      background-color: var(--white);
+      background-color: white;
       border-radius: 3px;
       text-decoration: none;
       overflow: hidden;
-
       img {
         border-radius: 3px;
         display: block;
         object-fit: cover;
         width: 100%;
-        max-height: 200px;
+        max-height: 250px;
       }
-
       footer {
         width: calc(100% - 4px);
         position: absolute;
@@ -159,7 +147,6 @@ const Wrapper = styled.main`
         align-items: center;
         transition: 0.2s;
         border-radius: 0 0 3px 3px;
-
         p {
           text-align: center;
           font-weight: 300;
@@ -191,31 +178,13 @@ const Wrapper = styled.main`
   /* Media Queries */
   /* ------------- */
 
-  @media (min-width: 320px) {
-    .text-box {
-      width: 320px;
-    }
-  }
-
   @media (min-width: 768px) {
-    section {
-      .card {
-        img {
-          max-height: 250px;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 900px) {
     display: grid;
-    grid-template-columns: 380px 1fr 60px;
+    grid-template-columns: 1fr 1fr 60px;
     align-items: start;
 
     .instructions {
-      height: 100vh;
-      margin-top: 0;
-      padding-left: 20px;
+      margin-top: 100px;
       align-items: left;
       display: flex;
 
@@ -234,8 +203,10 @@ const Wrapper = styled.main`
 
     section {
       margin-top: 100px;
-      padding: 30px;
       background-color: var(--green);
+      padding: 30px 30px 200px 30px;
+      grid-gap: 30px 30px;
+      height: auto;
     }
   }
 
@@ -246,4 +217,4 @@ const Wrapper = styled.main`
   }
 `;
 
-export default Places;
+export default Park;

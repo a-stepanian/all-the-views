@@ -1,24 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import data from "../data";
 import { BiShowAlt, BiHide } from "react-icons/bi";
+import { useGlobalContext } from "../context";
+import { Loading } from "../components";
 
 const Show = () => {
+  const { setCurrentPage, setLocation, view, setView } = useGlobalContext();
   let params = useParams();
-  const { title, img, location, description, season, url } = data.find(
-    (place) => place.id === params.id
-  );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     window.scrollTo(0, 0);
-  }, []);
+    setCurrentPage("view");
+    setLocation(data.find((place) => place.urlLoc === params.id));
+    setView(data.find((place) => place.id === params.viewId));
+    setIsLoading(false);
+  }, [view]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <Wrapper>
       <article>
-        <h1>{title}</h1>
-        <h2>{location}</h2>
+        <h1>{view.title}</h1>
+        <h2>{view.location}</h2>
         <button>
           Show Info <BiShowAlt />
         </button>
@@ -26,16 +36,16 @@ const Show = () => {
           Hide Info <BiHide />
         </button>
         <p>
-          {description} <span>Note: {season}</span>
+          {view.description} <span>Note: {view.season}</span>
         </p>
         <p>
           Additional Information about the hike can be found at{" "}
-          <a target="_blank" href={url}>
-            {url}
+          <a target="_blank" href={view.url}>
+            {view.url}
           </a>
         </p>
       </article>
-      <img src={img} alt={title} />
+      <img src={view.img} alt={view.title} />
     </Wrapper>
   );
 };

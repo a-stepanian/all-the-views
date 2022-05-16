@@ -27,7 +27,8 @@ const Wrapper = styled.main`
     font-size: 2.6rem;
     line-height: 2rem;
     color: var(--off-white);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+
     opacity: 0;
     animation: 0.8s appear forwards;
   }
