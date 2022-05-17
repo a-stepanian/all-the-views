@@ -21,7 +21,7 @@ const HomeThird = () => {
   );
 };
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   padding: 25px 0 25px;
   background-color: var(--black);
   display: flex;
@@ -60,7 +60,8 @@ const Wrapper = styled.main`
   .img {
     position: relative;
     width: 100%;
-    background-image: url("/img-metalake.jpg");
+    min-height: 400px;
+    background-image: url("/img-metalake-compressed.jpg");
     background-size: cover;
     background-position: center;
   }

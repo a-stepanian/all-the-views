@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { LogoColumnBigScreen, Loading } from "../components";
-import data from "../data";
 import { useGlobalContext } from "../context";
+import { LogoColumnBigScreen, Loading, PlacesTiles } from "../components";
+import {
+  BsFillArrowUpSquareFill,
+  BsFillArrowDownSquareFill,
+} from "react-icons/bs";
+import styled from "styled-components";
+import data from "../data";
 
 const Places = () => {
-  const { setCurrentPage, setLocation, setView } = useGlobalContext();
+  const { setLocationList, setCurrentPage, setLocation, setView } =
+    useGlobalContext();
   const [isLoading, setIsLoading] = useState(true);
-  const [locationList, setLocationList] = useState([]);
 
   const getUniqueLocations = () => {
     // Make an array of the unique locations from the data
@@ -48,37 +51,35 @@ const Places = () => {
         </div>
       </aside>
       <section>
-        {locationList.map((place) => {
-          const { id, urlLoc, location, thumb } = place;
-          return (
-            <Link
-              to={`/places/${urlLoc}`}
-              className="card"
-              key={id}
-              onClick={() => {
-                setLocation(place);
-                setCurrentPage("location");
-              }}
-            >
-              <img src={thumb} alt={location} />
-              <footer>
-                <p>{location}</p>
-              </footer>
-            </Link>
-          );
-        })}
+        <PlacesTiles />
         <button
+          className="btn up-btn"
           type="button"
           onClick={() => {
-            window.scrollTo({
-              top: 0,
+            const scrollBox = document.querySelector(".overflow-wrapper");
+            scrollBox.scrollBy({
+              top: -230,
               left: 0,
               behavior: "smooth",
             });
           }}
         >
-          Back to Top
+          <BsFillArrowUpSquareFill />
         </button>
+        <button
+          className="btn down-btn"
+          type="button"
+          onClick={() => {
+            const scrollBox = document.querySelector(".overflow-wrapper");
+            scrollBox.scrollBy({
+              top: 230,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <BsFillArrowDownSquareFill />
+        </button>{" "}
       </section>
       <LogoColumnBigScreen />
     </Wrapper>
@@ -101,9 +102,9 @@ const Wrapper = styled.main`
       align-items: center;
       justify-content: center;
       h2 {
-        font-size: 3.3rem;
-        line-height: 3.6rem;
-        color: var(--white);
+        font-size: 3rem;
+        line-height: 3rem;
+        color: var(--off-white);
         text-align: center;
       }
       .accent-line {
@@ -116,75 +117,22 @@ const Wrapper = styled.main`
         text-align: center;
         font-size: 1rem;
         line-height: 1.4rem;
-        color: var(--white);
+        color: var(--off-white);
         letter-spacing: 0.1rem;
       }
     }
   }
 
-  /* Places tiles small screen */
+  /* Location tiles small screen */
 
   section {
     padding: 100px 30px;
     width: 100%;
     background-color: var(--black);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 30px 30px;
+  }
 
-    .card {
-      position: relative;
-      padding: 2px;
-      background-color: var(--white);
-      border-radius: 3px;
-      text-decoration: none;
-      overflow: hidden;
-
-      img {
-        border-radius: 3px;
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        max-height: 200px;
-      }
-
-      footer {
-        width: calc(100% - 4px);
-        position: absolute;
-        bottom: 2px;
-        height: 40px;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.2s;
-        border-radius: 0 0 3px 3px;
-
-        p {
-          text-align: center;
-          font-weight: 300;
-          color: var(--white);
-        }
-      }
-    }
-    .card:hover {
-      footer {
-        height: 80px;
-      }
-    }
-
-    button {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 3px;
-      background-color: var(--green);
-      color: var(--white);
-      font-size: 2rem;
-    }
-    button:hover {
-      cursor: pointer;
-    }
+  .btn {
+    display: none;
   }
 
   /* ------------- */
@@ -223,15 +171,49 @@ const Wrapper = styled.main`
     }
 
     section {
-      margin-top: 100px;
-      padding: 30px;
+      position: relative;
+      height: calc(100vh - 200px);
       background-color: var(--green);
+      margin: 120px 0 80px;
+      padding: 0;
+    }
+
+    .btn {
+      position: absolute;
+      left: -1.5rem;
+      display: block;
+      height: 3rem;
+      width: 3rem;
+      font-size: 3rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: var(--light-green);
+      color: var(--off-white);
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+      transition: 0.2s;
+    }
+    .btn:hover {
+      cursor: pointer;
+      transform: translateY(-2px);
+      box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.9);
+    }
+    .up-btn {
+      top: calc(50% - 3.2rem);
+    }
+    .down-btn {
+      bottom: calc(50% - 3.2rem);
     }
   }
 
-  @media (min-width: 1000px) {
-    section {
-      grid-template-columns: 1fr 1fr;
+  @media (min-width: 1200px) {
+    .btn {
+      left: calc(50% - 2.05rem);
+    }
+    .up-btn {
+      top: -2rem;
+    }
+    .down-btn {
+      bottom: -2rem;
     }
   }
 `;

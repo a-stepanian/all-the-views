@@ -7,29 +7,39 @@ import { GiMountains, GiPhotoCamera, GiPineTree } from "react-icons/gi";
 const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen, setCurrentPage } =
     useGlobalContext();
+
+  if (isSidebarOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "unset";
+  }
+
   return (
     <Wrapper>
       <aside
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
       >
-        <Link
-          to="/"
-          className="link"
-          onClick={() => {
-            setIsSidebarOpen(false);
-          }}
-        >
-          Home
-        </Link>
-        <Link
-          to="/places"
-          className="link"
-          onClick={() => {
-            setIsSidebarOpen(false);
-          }}
-        >
-          Places
-        </Link>
+        <div className="link-wrapper">
+          <Link
+            to="/"
+            className="link"
+            onClick={() => {
+              setIsSidebarOpen(false);
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/places"
+            className="link"
+            onClick={() => {
+              setIsSidebarOpen(false);
+            }}
+          >
+            Places
+          </Link>
+        </div>
+
         <div className="green-column">
           <div className="icon-wrapper">
             <h3 className="atv">ATV</h3>
@@ -56,7 +66,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
-    transition: 0.5s;
+    transition: 0.4s;
   }
   .show-sidebar {
     z-index: 100;
@@ -68,10 +78,18 @@ const Wrapper = styled.div`
     justify-content: flex-end;
   }
 
+  .link-wrapper {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   a {
     color: var(--off-white);
     text-decoration: none;
-    margin: 50px 0;
+    margin: 40px 0;
   }
 
   .link {

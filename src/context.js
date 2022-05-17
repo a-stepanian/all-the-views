@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(null);
+  const [locationList, setLocationList] = useState([]);
   const [location, setLocation] = useState(null);
   const [view, setView] = useState(null);
 
@@ -19,6 +20,8 @@ export const AppProvider = ({ children }) => {
         setLocation,
         view,
         setView,
+        locationList,
+        setLocationList,
       }}
     >
       {children}

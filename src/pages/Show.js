@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import data from "../data";
-import { BiShowAlt, BiHide } from "react-icons/bi";
 import { useGlobalContext } from "../context";
 import { Loading } from "../components";
+import { BiShowAlt, BiHide } from "react-icons/bi";
+import styled from "styled-components";
+import data from "../data";
 
 const Show = () => {
   const { setCurrentPage, setLocation, view, setView } = useGlobalContext();

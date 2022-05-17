@@ -1,19 +1,27 @@
-import Navbar from "./Navbar";
+import Error from "./Error";
 import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import HamburgerButton from "./HamburgerButton";
 import HomeFirst from "./HomeFirst";
 import HomeSecond from "./HomeSecond";
 import HomeThird from "./HomeThird";
 import Loading from "./Loading";
+import Logo from "./Logo";
 import LogoColumnBigScreen from "./LogoColumnBigScreen";
+import Navbar from "./Navbar";
+import PlacesTiles from "./PlacesTiles";
+import Sidebar from "./Sidebar";
 
 export {
-  Navbar,
+  Error,
   Footer,
-  Sidebar,
+  HamburgerButton,
   HomeFirst,
   HomeSecond,
   HomeThird,
   Loading,
+  Logo,
   LogoColumnBigScreen,
+  Navbar,
+  PlacesTiles,
+  Sidebar,
 };

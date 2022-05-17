@@ -6,7 +6,7 @@ const HamburgerButton = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 
   return (
-    <Wrapper>
+    <Wrapper className="hamburger">
       <button
         type="button"
         onClick={() => {
@@ -30,6 +30,9 @@ const HamburgerButton = () => {
 };
 
 const Wrapper = styled.div`
+  margin-top: 28px;
+  margin-right: 28px;
+  height: 40px;
   button {
     z-index: 999;
     width: 40px;
@@ -74,7 +77,7 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     button {
       display: none;
     }

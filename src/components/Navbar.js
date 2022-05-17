@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { AiFillCaretRight } from "react-icons/ai";
-import HamburgerButton from "./HamburgerButton";
+import { Logo, HamburgerButton } from "./";
 
 const Navbar = () => {
   const {
@@ -21,7 +21,7 @@ const Navbar = () => {
     <Wrapper>
       <div className="all-links">
         <Link to="/" className="logo" onClick={() => setCurrentPage(null)}>
-          All The Views
+          <Logo />
         </Link>
         <div className="link-wrapper">
           <Link
@@ -60,7 +60,9 @@ const Navbar = () => {
                   : "location link"
               }`}
             >
-              {`${view.title.slice(0, 20)}...`}
+              {view.title.length > 25
+                ? `${view.title.slice(0, 22)}...`
+                : `${view.title}`}
             </Link>
           </div>
         )}
@@ -76,10 +78,11 @@ const Wrapper = styled.nav`
   height: 96px;
   display: flex;
   justify-content: space-between;
-  padding: 28px;
+  background-color: var(--black);
   .all-links {
+    padding-left: 28px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     a {
       text-decoration: none;
       color: var(--white);
@@ -113,13 +116,10 @@ const Wrapper = styled.nav`
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     .all-links {
       .link-wrapper {
         display: flex;
-      }
-      .logo {
-        margin-right: 100px;
       }
     }
   }
