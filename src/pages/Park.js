@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { LogoColumnBigScreen, Loading, Error } from "../components";
+import { LogoColumnPark, Loading, Error } from "../components";
 import styled from "styled-components";
 import data from "../data";
 
@@ -62,32 +62,33 @@ const Park = () => {
             </Link>
           );
         })}
-        <button
-          type="button"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: "smooth",
-            });
-          }}
-        >
-          Back to Top
-        </button>
+        <div className="btn-container">
+          <button
+            type="button"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Back to Top
+          </button>
+        </div>
       </section>
-      <LogoColumnBigScreen />
+      <LogoColumnPark />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main`
   background-color: var(--black);
-  padding-top: 100px;
 
   /* Park info small screen */
 
   section {
-      padding: 5%;
+    padding: 150px 5% 50px;
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 30px;
@@ -166,7 +167,6 @@ const Wrapper = styled.main`
       grid-template-columns: 1fr 1fr;
       .text-box {
         grid-column: 1 / 3;
-        align-items: flex-start;
       }
     }
     button {
@@ -181,7 +181,9 @@ const Wrapper = styled.main`
     section {
       grid-template-columns: 1fr 1fr;
       .text-box {
+        padding-top: 10px;
         grid-column: 1 / 3;
+        justify-content: flex-start;
         align-items: flex-start;
 
         h2 {
@@ -195,12 +197,18 @@ const Wrapper = styled.main`
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 992px) {
     section {
       grid-template-columns: 1fr 1fr 1fr;
     }
     button {
       grid-column: 1 / 4;
+    }
+  }
+  @media (min-width: 1200px) {
+    section {
+      padding-left: 15%;
+      padding-right: calc(15% - 60px);
     }
   }
 `;

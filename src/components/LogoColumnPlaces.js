@@ -4,23 +4,23 @@ import { GiMountains, GiPhotoCamera, GiPineTree } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
-const LogoColumnPark = () => {
+const LogoColumnBigScreen = () => {
   const { setPageSelected } = useGlobalContext();
 
   return (
     <Wrapper>
+      <div className="vertical-line"></div>
       <h3 className="atv">ATV</h3>
       <GiMountains className="icon" />
       <GiPhotoCamera className="icon" />
       <GiPineTree className="icon" />
-      <div className="vertical-line"></div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.aside`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: block;
     width: 60px;
     background-color: var(--black);
@@ -42,7 +42,7 @@ const Wrapper = styled.aside`
       letter-spacing: -0.1rem;
     }
     .vertical-line {
-      height: 20%;
+      height: 100%;
       width: 10px;
       background-color: var(--green);
       opacity: 0.3;
@@ -50,4 +50,4 @@ const Wrapper = styled.aside`
   }
 `;
 
-export default LogoColumnPark;
+export default LogoColumnBigScreen;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../context";
-import { LogoColumnBigScreen, Loading, PlacesTiles } from "../components";
+import { LogoColumnPlaces, Loading, PlacesTiles } from "../components";
 import {
   BsFillArrowUpSquareFill,
   BsFillArrowDownSquareFill,
@@ -81,7 +81,7 @@ const Places = () => {
           <BsFillArrowDownSquareFill />
         </button>{" "}
       </section>
-      <LogoColumnBigScreen />
+      <LogoColumnPlaces />
     </Wrapper>
   );
 };
@@ -126,7 +126,7 @@ const Wrapper = styled.main`
   /* Location tiles small screen */
 
   section {
-    padding: 100px 30px;
+    padding: 30px 30px;
     width: 100%;
     background-color: var(--black);
   }

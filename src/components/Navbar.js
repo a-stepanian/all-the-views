@@ -60,8 +60,8 @@ const Navbar = () => {
                   : "location link"
               }`}
             >
-              {view.title.length > 25
-                ? `${view.title.slice(0, 22)}...`
+              {view.title.length > 14
+                ? `${view.title.slice(0, 14)}...`
                 : `${view.title}`}
             </Link>
           </div>

@@ -9,22 +9,23 @@ const LogoColumnPark = () => {
 
   return (
     <Wrapper>
+      <div className="vertical-line"></div>
       <h3 className="atv">ATV</h3>
       <GiMountains className="icon" />
       <GiPhotoCamera className="icon" />
       <GiPineTree className="icon" />
-      <div className="vertical-line"></div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.aside`
+  z-index: 999;
   display: none;
   @media (min-width: 768px) {
     display: block;
+    height: 100%;
     width: 60px;
-    background-color: var(--black);
-    height: 100vh;
+    background-color: var(--dark-green);
     text-decoration: none;
     color: var(--green);
     display: flex;
@@ -42,7 +43,7 @@ const Wrapper = styled.aside`
       letter-spacing: -0.1rem;
     }
     .vertical-line {
-      height: 20%;
+      height: 100%;
       width: 10px;
       background-color: var(--green);
       opacity: 0.3;
