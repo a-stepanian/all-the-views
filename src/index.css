@@ -24,3 +24,7 @@ body {
 .no-scrolling {
   overflow: hidden;
 }
+
+a {
+  transition: 0.2s;
+}

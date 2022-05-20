@@ -3,7 +3,6 @@ import styled from "styled-components";
 import LogoColumnBigScreen from "./LogoColumnBigScreen";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
-import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const HomeSecond = () => {
   const { setCurrentPage } = useGlobalContext();
@@ -18,7 +17,7 @@ const HomeSecond = () => {
               className="places"
               onClick={() => setCurrentPage("places")}
             >
-              places <BsFillArrowRightSquareFill className="arrow" />
+              places
             </Link>
           </h2>
           <div className="accent-line"></div>
@@ -43,6 +42,7 @@ const Wrapper = styled.main`
     justify-content: center;
 
     .text-box {
+      margin: 50px 0;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -50,8 +50,8 @@ const Wrapper = styled.main`
       justify-content: center;
 
       h2 {
-        font-size: 3.3rem;
-        line-height: 3.6rem;
+        font-size: 2.3rem;
+        line-height: 2.6rem;
         color: var(--white);
         text-align: center;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
@@ -59,12 +59,14 @@ const Wrapper = styled.main`
         .places {
           font-size: 3.5rem;
           font-weight: 500;
-          color: var(--bright-green);
+          color: var(--light-green);
           letter-spacing: 0.05rem;
+          transition: letter-spacing 0.2s, color 0.7s;
         }
 
         .places:hover {
-          animation: bouncy 1s infinite;
+          letter-spacing: 0.15rem;
+          color: var(--bright-green);
         }
 
         .arrow {
@@ -116,6 +118,8 @@ const Wrapper = styled.main`
         align-items: flex-start;
 
         h2 {
+          font-size: 3.3rem;
+          line-height: 3.6rem;
           text-align: left;
         }
 
@@ -123,18 +127,6 @@ const Wrapper = styled.main`
           text-align: left;
         }
       }
-    }
-  }
-
-  @keyframes bouncy {
-    0% {
-      letter-spacing: 0.1rem;
-    }
-    50% {
-      letter-spacing: 0.15rem;
-    }
-    100% {
-      letter-spacing: 0.1rem;
     }
   }
 `;

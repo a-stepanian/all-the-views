@@ -26,44 +26,27 @@ const PlacesTiles = () => {
           </Link>
         );
       })}
-      {locationList.map((place) => {
-        const { id, urlLoc, location, thumb } = place;
-        return (
-          <Link
-            to={`/places/${urlLoc}`}
-            className="card"
-            key={id}
-            onClick={() => {
-              setLocation(place);
-              setCurrentPage("location");
-            }}
-          >
-            <img src={thumb} alt={location} />
-            <footer>
-              <p>{location}</p>
-            </footer>
-          </Link>
-        );
-      })}
-      <button
-        type="button"
-        className="scroll-to-top-btn"
-        onClick={() => {
-          const scrollBox = document.querySelector(".overflow-wrapper");
-          scrollBox.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        }}
-      >
-        Back to Top
-      </button>
+      <div className="btn-wrapper">
+        <button
+          type="button"
+          className="scroll-to-top-btn"
+          onClick={() => {
+            const scrollBox = document.querySelector(".overflow-wrapper");
+            scrollBox.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
+          Back to Top
+        </button>
+      </div>
     </Wrapper>
   );
 };
@@ -117,13 +100,20 @@ const Wrapper = styled.div`
   }
 
   .scroll-to-top-btn {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 3px;
-    background-color: var(--green);
+    background-color: transparent;
     color: var(--off-white);
     font-size: 2rem;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .scroll-to-top-btn:hover {
@@ -140,6 +130,9 @@ const Wrapper = styled.div`
   @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 60px;
+    .btn-wrapper {
+      grid-column: 1 / 3;
+    }
   }
 `;
 

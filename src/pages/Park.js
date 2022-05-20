@@ -19,14 +19,12 @@ const Park = () => {
     setIsLoading(true);
     window.scrollTo(0, 0);
     setCurrentPage("location");
-
     const foundPlace = data.find((place) => place.urlLoc === params.id);
     if (foundPlace) {
       setLocation(foundPlace);
     } else {
       setIsError(true);
     }
-
     setView(null);
     setIsLoading(false);
   }, []);
@@ -54,15 +52,7 @@ const Park = () => {
             </Link>
           );
         })}
-        {views.map((place) => {
-          const { id, urlLoc, title, thumb } = place;
-          return (
-            <Link to={`/places/${urlLoc}/${id}`} className="card" key={id}>
-              <img src={thumb} alt={title} />
-            </Link>
-          );
-        })}
-        <div className="btn-container">
+        <div className="btn-wrapper">
           <button
             type="button"
             onClick={() => {
@@ -143,16 +133,23 @@ const Wrapper = styled.main`
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     }
 
+    .btn-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     button {
-      width: 100%;
-      height: 100%;
-      padding: 2rem;
+      width: 200px;
+      margin: 50px 0;
+      padding: 5px;
       border: none;
       border-radius: 3px;
-      background-color: var(--green);
+      background-color: transparent;
       color: var(--white);
       font-size: 2rem;
     }
+
     button:hover {
       cursor: pointer;
     }
@@ -165,12 +162,14 @@ const Wrapper = styled.main`
   @media (min-width: 480px) {
     section {
       grid-template-columns: 1fr 1fr;
+
       .text-box {
         grid-column: 1 / 3;
       }
-    }
-    button {
-      grid-column: 1 / 3;
+      
+      .btn-wrapper {
+        grid-column: 1 / 3;
+      }
     }
   }
 
@@ -178,11 +177,10 @@ const Wrapper = styled.main`
     display: grid;
     grid-template-columns: 1fr 60px;
     align-items: start;
+
     section {
-      grid-template-columns: 1fr 1fr;
       .text-box {
         padding-top: 10px;
-        grid-column: 1 / 3;
         justify-content: flex-start;
         align-items: flex-start;
 
@@ -200,10 +198,12 @@ const Wrapper = styled.main`
   @media (min-width: 992px) {
     section {
       grid-template-columns: 1fr 1fr 1fr;
+      
+      .btn-wrapper {
+        grid-column: 1 / 4;
+      }
     }
-    button {
-      grid-column: 1 / 4;
-    }
+
   }
   @media (min-width: 1200px) {
     section {

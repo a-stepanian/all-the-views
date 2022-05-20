@@ -94,12 +94,17 @@ const Wrapper = styled.nav`
       font-weight: 300;
       letter-spacing: 0.1rem;
       border-bottom: 3px solid transparent;
+      transition: 0.2s;
+    }
+    .link:hover {
+      color: var(--light-green);
     }
     .link-selected {
       border-color: var(--white);
     }
-    .link:hover {
-      color: var(--light-green);
+    .link-selected:hover {
+      color: var(--white);
+      cursor: default;
     }
     .arrow {
       color: var(--off-white);

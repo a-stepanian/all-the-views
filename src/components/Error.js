@@ -22,7 +22,7 @@ const Wrapper = styled.main`
   justify-content: center;
   align-items: center;
   .text-box {
-    z-index: 999;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -12,10 +12,12 @@ import LogoColumnPlaces from "./LogoColumnPlaces";
 import Navbar from "./Navbar";
 import PlacesTiles from "./PlacesTiles";
 import Sidebar from "./Sidebar";
+import FullScreen from "./FullScreen";
 
 export {
   Error,
   Footer,
+  FullScreen,
   HamburgerButton,
   HomeFirst,
   HomeSecond,

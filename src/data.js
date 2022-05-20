@@ -80,38 +80,6 @@ const data = [
     url: "https://www.wta.org/go-hiking/hikes/windy-ridge",
   },
   {
-    id: "5",
-    title: "Hanford Reach",
-    urlLoc: "hanfordreach",
-    shortLoc: "Hanford Reach",
-    location: "Hanford Reach National Monument",
-    locationDescription:
-      "Born of fire and ice and flood over millions of years, preserved through the war and conflict of half a century, now protected forever. Spring often brings good wildflower shows, and abundant wildlife provide year-round opportunities for photography and wildlife observation.",
-    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004571/AllTheViews/img-dunes_nvu8xg.jpg",
-    thumb:
-      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004570/AllTheViews/img-dunes-sm_dj7r5w.jpg",
-    description:
-      "From the white bluffs parking lot head up the trail and continue to skirting the edge of the bluffs for several miles.  Once you reach the dunes, climb to the top of the largest sand dune for this view.  There is no marked trail through the sand so take note of where you entered the dunes as it is very easy to lose the trail on the way back.  The views get better as you go deeper into the dunes - stay on top of the ridge to avoid getting lost.",
-    season: "",
-    url: "https://www.wta.org/go-hiking/hikes/white-bluffs-north",
-  },
-  {
-    id: "6",
-    title: "Palouse Canyon",
-    urlLoc: "palousefalls",
-    shortLoc: "Palouse Falls",
-    location: "Palouse Falls State Park",
-    locationDescription:
-      "The Palouse River runs through a narrow cataract and drops 200 feet to a churning bowl. From there, the current moves swiftly, through a winding gorge of columnar basalt, to its southern end at the mighty Snake River.  Carved more than 13,000 years ago, Palouse Falls is among the last active waterfalls on the Ice Age floods path.",
-    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004569/AllTheViews/img-canyon_nqdlrn.jpg",
-    thumb:
-      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004567/AllTheViews/img-canyon-sm_fd4cgl.jpg",
-    description:
-      "From the parking lot, head away from the popular waterfall viewpoint toward the gated trail near the restrooms.  Take the trail there as far back as as it goes, for about a quarter mile.  Head toward the canyon entrance for this viewpoint, being sure to stay far back from the edge.",
-    season: "",
-    url: "https://www.wta.org/go-hiking/hikes/palouse-falls",
-  },
-  {
     id: "7",
     title: "Maple Pass",
     urlLoc: "ncnp",
@@ -126,6 +94,22 @@ const data = [
       "This is definitely the most crowded place on this list, but the key is to go before larch season.  The late summer months are the perfect time to visit and the views are incredible the entire time.  Head either clockwise or counter-clockwise on the trail.  At the highest elevation point of the trail take the obvious boot path toward the end of the cliff to enjoy this view overlooking Lake Ann.",
     season: "Hwy 20 is closed in the winter.",
     url: "https://www.wta.org/go-hiking/hikes/maple-pass",
+  },
+  {
+    id: "28",
+    title: "Glacial Lake along Maple Pass",
+    urlLoc: "ncnp",
+    shortLoc: "North Cascades",
+    location: "North Cascades National Park",
+    locationDescription:
+      "The North Cascades are Calling! Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate. Help steward the ecological heart of the Cascades.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653070187/AllTheViews/nc1_qrfoew.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653070222/AllTheViews/nc1_danrme.jpg",
+    description:
+      "From the Maple Pass trailhead, take the trail counter-clockwise and go past the intersection with the Maple Pass trail.",
+    season: "Hwy 20 is closed in the winter.",
+    url: "https://www.wta.org/go-hiking/hikes/rainy-lake",
   },
   {
     id: "8",
@@ -286,6 +270,184 @@ const data = [
       "Starting from Johnston Ridge Observatory take the boundary trail east.  Pass the junctions for Devil's Point and the Truman Trail, making your way all the way to the intersection with the Harry's Ridge trail.  Climb the ridge to the top, but don't stop there at the volcano monitoring equipment, continue on further approximately a quarter mile.  This spot puts you directly in front of the crater created during the 1980 blast.",
     season: "The road to access this trailhead is closed in the winter.",
     url: "https://www.wta.org/go-hiking/hikes/harrys-ridge",
+  },
+  {
+    id: "18",
+    title: "Tattoosh Range from Alta Vista",
+    urlLoc: "mtrainier",
+    shortLoc: "Mt. Rainier",
+    location: "Mount Rainier National Park",
+    locationDescription:
+      "An Icon on the Horizon.  Ascending to 14,410 feet above sea level, Mount Rainier stands as an icon in the Washington landscape. An active volcano, Mount Rainier is the most glaciated peak in the contiguous U.S.A., spawning five major rivers. Subalpine wildflower meadows ring the icy volcano while ancient forest cloaks Mount Rainier’s lower slopes.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068515/AllTheViews/r3_bouwfu.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068655/AllTheViews/r3_vpbktp.jpg",
+    description:
+      "Escape the crowds on the skyline trail and opt for the Alta Vista Trail instead.",
+    season:
+      "Can be snowshoed to in winter.  Must carry tire chains to get to Paradise visitor center in winter months.",
+    url: "https://www.wta.org/go-hiking/hikes/burroughs-mountain",
+  },
+  {
+    id: "19",
+    title: "Sol Duc River",
+    urlLoc: "olympic",
+    shortLoc: "Olympic",
+    location: "Olympic National Park",
+    locationDescription:
+      "With its incredible range of precipitation and elevation, diversity is the hallmark of Olympic National Park. Encompassing nearly a million acres, the park protects a vast wilderness, thousands of years of human history, and several distinctly different ecosystems, including glacier-capped mountains, old-growth temperate rain forests, and over 70 miles of wild coastline.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068518/AllTheViews/o6_of5vre.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068655/AllTheViews/o6_zykaab.jpg",
+    description:
+      "At the salmon spawning pull-over, take a short walk down the Sol Duc River approximately 100 yards to reach this view.",
+    season:
+      "Can be snowshoed to in winter.  Must carry tire chains to get to Paradise visitor center in winter months.",
+    url: "https://www.wta.org/go-hiking/hikes/burroughs-mountain",
+  },
+  {
+    id: "20",
+    title: "Olympic Mountains from Hurricane Hill",
+    urlLoc: "olympic",
+    shortLoc: "Olympic",
+    location: "Olympic National Park",
+    locationDescription:
+      "With its incredible range of precipitation and elevation, diversity is the hallmark of Olympic National Park. Encompassing nearly a million acres, the park protects a vast wilderness, thousands of years of human history, and several distinctly different ecosystems, including glacier-capped mountains, old-growth temperate rain forests, and over 70 miles of wild coastline.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068516/AllTheViews/o5_s95cee.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068655/AllTheViews/o5_wzhezv.jpg",
+    description: "Take the hurricane ridge trail to the top of hurricane hill.",
+    season:
+      "Can be snowshoed to in winter.  Must carry tire chains to get to Hurricane Ridge visitor center in winter months.",
+    url: "https://www.wta.org/go-hiking/hikes/burroughs-mountain",
+  },
+  {
+    id: "21",
+    title: "Quinault Rain Forest",
+    urlLoc: "olympic",
+    shortLoc: "Olympic",
+    location: "Olympic National Park",
+    locationDescription:
+      "With its incredible range of precipitation and elevation, diversity is the hallmark of Olympic National Park. Encompassing nearly a million acres, the park protects a vast wilderness, thousands of years of human history, and several distinctly different ecosystems, including glacier-capped mountains, old-growth temperate rain forests, and over 70 miles of wild coastline.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068515/AllTheViews/o2_stp83z.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068654/AllTheViews/o2_pti8o8.jpg",
+    description:
+      "Taking the Quinault Loop Train counter-clockwise you will arrive at this view point when descending the large hillside.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/burroughs-mountain",
+  },
+  {
+    id: "22",
+    title: "Third Beach",
+    urlLoc: "olympic",
+    shortLoc: "Olympic",
+    location: "Olympic National Park",
+    locationDescription:
+      "With its incredible range of precipitation and elevation, diversity is the hallmark of Olympic National Park. Encompassing nearly a million acres, the park protects a vast wilderness, thousands of years of human history, and several distinctly different ecosystems, including glacier-capped mountains, old-growth temperate rain forests, and over 70 miles of wild coastline.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068514/AllTheViews/o3_hxzpkt.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068655/AllTheViews/o3_tcorel.jpg",
+    description:
+      "Park on the side of the road and head down the hillside to the beach",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/burroughs-mountain",
+  },
+  {
+    id: "23",
+    title: "Ross Dam",
+    urlLoc: "ncnp",
+    shortLoc: "North Cascades",
+    location: "North Cascades National Park",
+    locationDescription:
+      "Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653068514/AllTheViews/n1_sh7vm4.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653068654/AllTheViews/n1_sezk1f.jpg",
+    description:
+      "Park in the day use lot near Ross Lake and take the trail all the down to the dam.",
+    season: "Hwy 20 is closed in the winter.",
+    url: "https://www.wta.org/go-hiking/hikes/maple-pass",
+  },
+  {
+    id: "5",
+    title: "Hanford Reach",
+    urlLoc: "hanfordreach",
+    shortLoc: "Hanford Reach",
+    location: "Hanford Reach National Monument",
+    locationDescription:
+      "Born of fire and ice and flood over millions of years, preserved through the war and conflict of half a century, now protected forever. Spring often brings good wildflower shows, and abundant wildlife provide year-round opportunities for photography and wildlife observation.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004571/AllTheViews/img-dunes_nvu8xg.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004570/AllTheViews/img-dunes-sm_dj7r5w.jpg",
+    description:
+      "From the white bluffs parking lot head up the trail and continue to skirting the edge of the bluffs for several miles.  Once you reach the dunes, climb to the top of the largest sand dune for this view.  There is no marked trail through the sand so take note of where you entered the dunes as it is very easy to lose the trail on the way back.  The views get better as you go deeper into the dunes - stay on top of the ridge to avoid getting lost.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/white-bluffs-north",
+  },
+  {
+    id: "30",
+    title: "White Bluffs and Dunes",
+    urlLoc: "hanfordreach",
+    shortLoc: "Hanford Reach",
+    location: "Hanford Reach National Monument",
+    locationDescription:
+      "Born of fire and ice and flood over millions of years, preserved through the war and conflict of half a century, now protected forever. Spring often brings good wildflower shows, and abundant wildlife provide year-round opportunities for photography and wildlife observation.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653070184/AllTheViews/IMG-3276_tro8mw.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653070184/AllTheViews/IMG-3276_tro8mw.jpg",
+    description:
+      "From the white bluffs parking lot head up the trail and continue to skirting the edge of the bluffs for several miles.  Follow the dunes to the very end.  There is no marked trail through the sand so take note of where you entered the dunes as it is very easy to lose the trail on the way back.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/white-bluffs-north",
+  },
+  {
+    id: "31",
+    title: "Hanford Reach South Cliffs",
+    urlLoc: "hanfordreach",
+    shortLoc: "Hanford Reach South Cliffs",
+    location: "Hanford Reach National Monument",
+    locationDescription:
+      "Born of fire and ice and flood over millions of years, preserved through the war and conflict of half a century, now protected forever. Spring often brings good wildflower shows, and abundant wildlife provide year-round opportunities for photography and wildlife observation.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653070184/AllTheViews/IMG-3445_hoi7vx.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653070222/AllTheViews/IMG-3445_krx4xd.jpg",
+    description:
+      "From the south parking lot take the service road / trail toward the river.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/white-bluffs-north",
+  },
+  {
+    id: "6",
+    title: "Palouse Canyon",
+    urlLoc: "palousefalls",
+    shortLoc: "Palouse Falls",
+    location: "Palouse Falls State Park",
+    locationDescription:
+      "The Palouse River runs through a narrow cataract and drops 200 feet to a churning bowl. From there, the current moves swiftly, through a winding gorge of columnar basalt, to its southern end at the mighty Snake River.  Carved more than 13,000 years ago, Palouse Falls is among the last active waterfalls on the Ice Age floods path.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004569/AllTheViews/img-canyon_nqdlrn.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004567/AllTheViews/img-canyon-sm_fd4cgl.jpg",
+    description:
+      "From the parking lot, head away from the popular waterfall viewpoint toward the gated trail near the restrooms.  Take the trail there as far back as as it goes, for about a quarter mile.  Head toward the canyon entrance for this viewpoint, being sure to stay far back from the edge.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/palouse-falls",
+  },
+  {
+    id: "32",
+    title: "Palouse Falls",
+    urlLoc: "palousefalls",
+    shortLoc: "Palouse Falls",
+    location: "Palouse Falls State Park",
+    locationDescription:
+      "The Palouse River runs through a narrow cataract and drops 200 feet to a churning bowl. From there, the current moves swiftly, through a winding gorge of columnar basalt, to its southern end at the mighty Snake River.  Carved more than 13,000 years ago, Palouse Falls is among the last active waterfalls on the Ice Age floods path.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653070187/AllTheViews/IMG-3356_lgkqkq.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653070223/AllTheViews/IMG-3356_ta5hhx.jpg",
+    description:
+      "From the parking lot head toward the falls then take the trail away down river.",
+    season: "",
+    url: "https://www.wta.org/go-hiking/hikes/palouse-falls",
   },
 ];
 
