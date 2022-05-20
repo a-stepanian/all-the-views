@@ -9,7 +9,7 @@ const Home = () => {
     setCurrentPage(null);
     setLocation(null);
     setView(null);
-  }, []);
+  });
 
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
@@ -6,16 +6,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { Logo, HamburgerButton } from "./";
 
 const Navbar = () => {
-  const {
-    isSidebarOpen,
-    setIsSidebarOpen,
-    currentPage,
-    setCurrentPage,
-    location,
-    setLocation,
-    view,
-    setView,
-  } = useGlobalContext();
+  const { currentPage, setCurrentPage, location, view } = useGlobalContext();
 
   return (
     <Wrapper>

@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { GiMountains, GiPhotoCamera, GiPineTree } from "react-icons/gi";
 
 const Sidebar = () => {
-  const { isSidebarOpen, setIsSidebarOpen, setCurrentPage } =
-    useGlobalContext();
+  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 
   if (isSidebarOpen) {
     document.body.style.overflow = "hidden";

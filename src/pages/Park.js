@@ -29,7 +29,7 @@ const Park = () => {
 
     setView(null);
     setIsLoading(false);
-  }, [location]);
+  }, []);
 
   if (isLoading) {
     return <Loading />;

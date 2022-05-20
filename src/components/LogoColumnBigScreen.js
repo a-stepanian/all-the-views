@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { GiMountains, GiPhotoCamera, GiPineTree } from "react-icons/gi";
-import { Link } from "react-router-dom";
-import { useGlobalContext } from "../context";
 
 const LogoColumnPark = () => {
-  const { setPageSelected } = useGlobalContext();
-
   return (
     <Wrapper>
       <h3 className="atv">ATV</h3>
