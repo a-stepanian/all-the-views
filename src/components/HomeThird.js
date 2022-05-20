@@ -61,7 +61,7 @@ const Wrapper = styled.section`
     position: relative;
     width: 100%;
     min-height: 400px;
-    background-image: url("/img-metalake-compressed.jpg");
+    background-image: url("https://res.cloudinary.com/dtx3servt/image/upload/v1653004578/AllTheViews/img-metalake_sqpeab.jpg");
     background-size: cover;
     background-position: center;
   }

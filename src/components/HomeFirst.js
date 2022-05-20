@@ -15,7 +15,7 @@ const HomeFirst = () => {
 
 const Wrapper = styled.main`
   height: 100vh;
-  background-image: url("/img-dunes-compressed.jpg");
+  background-image: url("https://res.cloudinary.com/dtx3servt/image/upload/v1653004571/AllTheViews/img-dunes_nvu8xg.jpg");
   background-size: cover;
   background-position: center;
   h2 {

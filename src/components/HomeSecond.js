@@ -92,7 +92,7 @@ const Wrapper = styled.main`
     position: relative;
     width: 100%;
     min-height: 400px;
-    background-image: url("/img-burroughs-compressed.jpg");
+    background-image: url("https://res.cloudinary.com/dtx3servt/image/upload/v1653004569/AllTheViews/img-burroughs_vu9g3w.jpg");
     background-size: cover;
     background-position: center;
   }
