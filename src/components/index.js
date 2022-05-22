@@ -13,6 +13,7 @@ import Navbar from "./Navbar";
 import PlacesTiles from "./PlacesTiles";
 import Sidebar from "./Sidebar";
 import FullScreen from "./FullScreen";
+import LogoColumnHorizontal from "./LogoColumnHorizontal";
 
 export {
   Error,
@@ -25,6 +26,7 @@ export {
   Loading,
   Logo,
   LogoColumnBigScreen,
+  LogoColumnHorizontal,
   LogoColumnPark,
   LogoColumnPlaces,
   Navbar,

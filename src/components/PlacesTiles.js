@@ -58,7 +58,7 @@ const Wrapper = styled.div`
 
   .card {
     position: relative;
-    height: 200px;
+    height: 160px;
     padding: 2px;
     background-color: var(--white);
     border-radius: 3px;
@@ -67,7 +67,7 @@ const Wrapper = styled.div`
 
     img {
       width: 100%;
-      height: 194px;
+      height: 154px;
       border-radius: 3px;
       display: block;
       object-fit: cover;
@@ -93,12 +93,6 @@ const Wrapper = styled.div`
     }
   }
 
-  .card:hover {
-    footer {
-      height: 80px;
-    }
-  }
-
   .scroll-to-top-btn {
     width: 200px;
     padding: 10px;
@@ -118,6 +112,20 @@ const Wrapper = styled.div`
 
   .scroll-to-top-btn:hover {
     cursor: pointer;
+  }
+
+  @media (min-width: 480px) {
+    .card {
+      height: 200px;
+      img {
+        height: 194px;
+      }
+    }
+    .card:hover {
+      footer {
+        height: 80px;
+      }
+    }
   }
 
   @media (min-width: 900px) {

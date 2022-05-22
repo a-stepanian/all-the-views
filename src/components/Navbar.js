@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
@@ -6,7 +6,18 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { Logo, HamburgerButton } from "./";
 
 const Navbar = () => {
+  const [width, setWidth] = useState(window.innerWidth);
   const { currentPage, setCurrentPage, location, view } = useGlobalContext();
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   return (
     <Wrapper>
@@ -51,7 +62,7 @@ const Navbar = () => {
                   : "location link"
               }`}
             >
-              {view.title.length > 14
+              {view.title.length > 14 && width < 800
                 ? `${view.title.slice(0, 14)}...`
                 : `${view.title}`}
             </Link>
@@ -94,7 +105,6 @@ const Wrapper = styled.nav`
       font-weight: 300;
       letter-spacing: 0.1rem;
       border-bottom: 3px solid transparent;
-      transition: 0.2s;
     }
     .link:hover {
       color: var(--light-green);

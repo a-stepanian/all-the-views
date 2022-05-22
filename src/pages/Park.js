@@ -73,18 +73,19 @@ const Park = () => {
 };
 
 const Wrapper = styled.main`
-  background-color: var(--black);
+  background-color: var(--green);
 
   /* Park info small screen */
 
   section {
     padding: 150px 5% 50px;
       display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
     }
 
   .text-box {
+    grid-column: 1 / 3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +99,8 @@ const Wrapper = styled.main`
     .accent-line {
       width: 100px;
       margin: 20px 0;
-      border-top: 8px solid var(--green);
+      border-top: 8px solid var(--dark-green);
+      opacity: 0.5;
     }
     p {
       font-size: 0.8rem;
@@ -113,12 +115,8 @@ const Wrapper = styled.main`
 
     .card {
       position: relative;
-      padding: 2px;
-      background-color: var(--white);
       border-radius: 3px;
-      text-decoration: none;
       overflow: hidden;
-      transition: 0.2s;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
       img {
         border-radius: 3px;
@@ -128,15 +126,12 @@ const Wrapper = styled.main`
         max-height: 250px;
       }
     }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
-    }
 
     .btn-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
+      grid-column: 1 / 3;
     }
 
     button {
@@ -161,15 +156,16 @@ const Wrapper = styled.main`
 
   @media (min-width: 480px) {
     section {
-      grid-template-columns: 1fr 1fr;
-
-      .text-box {
-        grid-column: 1 / 3;
-      }
-      
-      .btn-wrapper {
-        grid-column: 1 / 3;
-      }
+      grid-grap: 20px;
+    }
+    .card {
+      border: 2px solid var(--white);
+      background-color: var(--white);
+      transition: 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
     }
   }
 

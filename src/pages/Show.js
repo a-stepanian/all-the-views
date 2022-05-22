@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { Loading, Error, FullScreen } from "../components";
+import {
+  Loading,
+  Error,
+  FullScreen,
+  LogoColumnHorizontal,
+} from "../components";
 import styled from "styled-components";
 import data from "../data";
+import { BiExpandAlt } from "react-icons/bi";
 
 const Show = () => {
   const {
@@ -18,6 +24,15 @@ const Show = () => {
   let params = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [pageWidth, setPageWidth] = useState(document.body.scrollWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setPageWidth(document.body.scrollWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.addEventListener("resize", handleResize);
+  });
 
   useEffect(() => {
     setIsLoading(true);
@@ -55,12 +70,22 @@ const Show = () => {
             alt={view.title}
             onClick={() => setFullScreen(true)}
           />
-          <p className="additional-info">
-            Additional info at{" "}
-            <a target="_blank" href={view.url}>
-              {view.url}
-            </a>
-          </p>
+          {pageWidth < 480 && (
+            <button
+              className="full-screen-btn"
+              onClick={() => setFullScreen(true)}
+            >
+              <BiExpandAlt />
+            </button>
+          )}
+          {pageWidth >= 480 && (
+            <p className="additional-info">
+              Additional info at{" "}
+              <a target="_blank" href={view.url}>
+                {view.url}
+              </a>
+            </p>
+          )}
         </div>
         <div className="getting-there">
           <h3>Getting There</h3>
@@ -68,6 +93,7 @@ const Show = () => {
           {view.season && <p className="note">Note: {view.season}</p>}
         </div>
       </Wrapper>
+      <LogoColumnHorizontal />
       {fullScreen && <FullScreen />}
     </>
   );
@@ -114,6 +140,16 @@ const Wrapper = styled.main`
       a {
         color: var(--white);
       }
+    }
+    .full-screen-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      font-size: 1.5rem;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 

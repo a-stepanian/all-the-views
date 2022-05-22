@@ -80,6 +80,22 @@ const data = [
     url: "https://www.wta.org/go-hiking/hikes/windy-ridge",
   },
   {
+    id: "14",
+    title: "Blue Lake",
+    urlLoc: "ncnp",
+    shortLoc: "North Cascades",
+    location: "North Cascades National Park",
+    locationDescription:
+      "Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate.",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004566/AllTheViews/img-blue3_zldgzk.jpg",
+    thumb:
+      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004563/AllTheViews/img-blue3-sm_ivhspy.jpg",
+    description:
+      "This is definitely the most crowded place on this list, but the key is to go before larch season.  The late summer months are the perfect time to visit and the views are incredible the entire time.  Head either clockwise or counter-clockwise on the trail.  At the highest elevation point of the trail take the obvious boot path toward the end of the cliff to enjoy this view overlooking Lake Ann.",
+    season: "Hwy 20 is closed in the winter.",
+    url: "https://www.wta.org/go-hiking/hikes/maple-pass",
+  },
+  {
     id: "7",
     title: "Maple Pass",
     urlLoc: "ncnp",
@@ -208,22 +224,6 @@ const data = [
     url: "https://www.wta.org/go-hiking/hikes/maple-pass",
   },
   {
-    id: "14",
-    title: "Blue Lake",
-    urlLoc: "ncnp",
-    shortLoc: "North Cascades",
-    location: "North Cascades National Park",
-    locationDescription:
-      "Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate.",
-    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004566/AllTheViews/img-blue3_zldgzk.jpg",
-    thumb:
-      "https://res.cloudinary.com/dtx3servt/image/upload/v1653004563/AllTheViews/img-blue3-sm_ivhspy.jpg",
-    description:
-      "This is definitely the most crowded place on this list, but the key is to go before larch season.  The late summer months are the perfect time to visit and the views are incredible the entire time.  Head either clockwise or counter-clockwise on the trail.  At the highest elevation point of the trail take the obvious boot path toward the end of the cliff to enjoy this view overlooking Lake Ann.",
-    season: "Hwy 20 is closed in the winter.",
-    url: "https://www.wta.org/go-hiking/hikes/maple-pass",
-  },
-  {
     id: "15",
     title: "Blue Lake",
     urlLoc: "ncnp",
@@ -231,7 +231,7 @@ const data = [
     location: "North Cascades National Park",
     locationDescription:
       "Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate.",
-    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004564/AllTheViews/img-blue4-sm_yc8fez.jpg",
+    img: "https://res.cloudinary.com/dtx3servt/image/upload/v1653004567/AllTheViews/img-blue4_y4wfhm.jpg",
     thumb:
       "https://res.cloudinary.com/dtx3servt/image/upload/v1653004564/AllTheViews/img-blue4-sm_yc8fez.jpg",
     description:
