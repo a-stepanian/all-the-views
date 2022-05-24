@@ -75,19 +75,19 @@ const Park = () => {
         <IoCaretBack />
         Back to Places
       </Link>
-      <LogoColumnPark />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main`
   background-color: var(--green);
+  padding: 96px 0 50px;
 
   /* Park info small screen */
 
   section {
+    padding-top: 50px;
     position: relative;
-    padding: 170px 5% 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -181,26 +181,24 @@ const Wrapper = styled.main`
   /* ------------- */
 
   @media (min-width: 480px) {
+    padding-left: 5%;
+    padding-right: 5%;
     section {
-      grid-grap: 20px;
+      grid-gap: 20px;
     }
     .card {
       border: 2px solid var(--white);
       background-color: var(--white);
-      img {
-        transition: 0.2s;
-      }
+      transition: 0.3s;
     }
-    .card:hover img {
-      transform: scale(1.3);
+    .card:hover {
+      outline: 5px solid var(--bright-green);
     }
   }
 
   @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 60px;
-    align-items: start;
-
+    padding-left: 10%;
+    padding-right: 10%;
     section {
       .text-box {
         padding-top: 10px;
@@ -225,6 +223,7 @@ const Wrapper = styled.main`
 
   @media (min-width: 992px) {
     section {
+      grid-gap: 25px;
       grid-template-columns: 1fr 1fr 1fr;
       
       .btn-wrapper {
@@ -234,9 +233,10 @@ const Wrapper = styled.main`
 
   }
   @media (min-width: 1200px) {
+    padding-left: 15%;
+    padding-right: 15%;
     section {
-      padding-left: 15%;
-      padding-right: calc(15% - 60px);
+      grid-gap: 30px;
     }
   }
 `;

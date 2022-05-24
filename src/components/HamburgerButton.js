@@ -34,13 +34,14 @@ const Wrapper = styled.div`
   margin-right: 28px;
   height: 40px;
   button {
-    z-index: 999;
+    z-index: 900;
     width: 40px;
     height: 40px;
     border: none;
     background: transparent;
     position: relative;
     .line {
+      z-index: 900;
       position: absolute;
       left: 0;
       width: 40px;
@@ -49,14 +50,17 @@ const Wrapper = styled.div`
     }
     .line1 {
       top: 5px;
+      z-index: 900;
     }
     .line2 {
       top: 15px;
     }
     .line3 {
+      z-index: 900;
       top: 25px;
     }
     .clicked1 {
+      z-index: 900;
       top: 15px;
       transform: rotate(-225deg);
     }
@@ -66,6 +70,7 @@ const Wrapper = styled.div`
       width: 0;
     }
     .clicked3 {
+      z-index: 900;
       top: 15px;
       transform: rotate(-135deg);
     }

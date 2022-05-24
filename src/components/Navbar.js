@@ -83,7 +83,6 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   background-color: var(--black);
-  z-index: 10;
   .all-links {
     padding-left: 28px;
     display: flex;
