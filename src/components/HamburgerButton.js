@@ -68,6 +68,7 @@ const Wrapper = styled.div`
       top: 15px;
       left: 15px;
       width: 0;
+      border-top: 0 solid transparent;
     }
     .clicked3 {
       z-index: 900;
