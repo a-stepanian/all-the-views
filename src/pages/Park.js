@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { LogoColumnPark, Loading, Error } from "../components";
+import { IoCaretBack } from "react-icons/io5";
 import styled from "styled-components";
 import data from "../data";
 
@@ -27,6 +28,7 @@ const Park = () => {
     }
     setView(null);
     setIsLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {
@@ -43,6 +45,8 @@ const Park = () => {
           <h2>{location.location}</h2>
           <div className="accent-line"></div>
           <p>{location.locationDescription}</p>
+          <div className="accent-line accent-line2"></div>
+          <h3>Choose a view to learn more</h3>
         </div>
         {views.map((place) => {
           const { id, urlLoc, title, thumb } = place;
@@ -67,6 +71,10 @@ const Park = () => {
           </button>
         </div>
       </section>
+      <Link to="/places" className="back">
+        <IoCaretBack />
+        Back to Places
+      </Link>
       <LogoColumnPark />
     </Wrapper>
   );
@@ -78,10 +86,20 @@ const Wrapper = styled.main`
   /* Park info small screen */
 
   section {
-    padding: 150px 5% 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
+    position: relative;
+    padding: 170px 5% 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    }
+
+    .back {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 100px;
+      left: 10px; 
+      color: var(--black);
     }
 
   .text-box {
@@ -104,10 +122,18 @@ const Wrapper = styled.main`
     }
     p {
       font-size: 0.8rem;
-      font-weight: 200;
+      font-weight: 400;
       line-height: 1.4rem;
       color: var(--off-white);
       letter-spacing: 0.05rem;
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 20px 0 5px;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      font-weight: 300;
+      line-height: 1.3rem;
+      color: var(--bright-green);
     }
   }
 
@@ -161,11 +187,12 @@ const Wrapper = styled.main`
     .card {
       border: 2px solid var(--white);
       background-color: var(--white);
-      transition: 0.2s;
+      img {
+        transition: 0.2s;
+      }
     }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    .card:hover img {
+      transform: scale(1.3);
     }
   }
 
@@ -179,15 +206,20 @@ const Wrapper = styled.main`
         padding-top: 10px;
         justify-content: flex-start;
         align-items: flex-start;
-
+        .accent-line {
+          margin: 20px 0;
+        }
         h2 {
           text-align: left;
         }
-
         p {
           text-align: left;
         }
       }
+    }
+    
+    .accent-line2, h3, .back {
+      display: none;
     }
   }
 

@@ -13,7 +13,7 @@ const HomeFirst = () => {
   );
 };
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   height: 100vh;
   background-image: url("https://res.cloudinary.com/dtx3servt/image/upload/v1653004571/AllTheViews/img-dunes_nvu8xg.jpg");
   background-size: cover;
@@ -28,7 +28,6 @@ const Wrapper = styled.main`
     line-height: 2rem;
     color: var(--off-white);
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
-
     opacity: 0;
     animation: 0.8s appear forwards;
   }

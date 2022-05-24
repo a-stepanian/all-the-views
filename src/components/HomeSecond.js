@@ -30,8 +30,8 @@ const HomeSecond = () => {
   );
 };
 
-const Wrapper = styled.main`
-  margin-top: 50px;
+const Wrapper = styled.section`
+  margin-top: 100px;
   background-color: var(--black);
   display: grid;
   grid-template-columns: 1fr;
@@ -109,17 +109,14 @@ const Wrapper = styled.main`
     display: grid;
     grid-template-columns: 500px 1fr 60px;
     align-items: normal;
-
     .take-a-look-container {
-      padding-left: 20px;
       align-items: left;
 
       .text-box {
         align-items: flex-start;
+        padding-left: 60px;
 
         h2 {
-          font-size: 3.3rem;
-          line-height: 3.6rem;
           text-align: left;
         }
 
@@ -128,6 +125,10 @@ const Wrapper = styled.main`
         }
       }
     }
+  }
+  @media (min-width: 1200px) {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 `;
 

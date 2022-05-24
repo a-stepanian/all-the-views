@@ -35,6 +35,7 @@ const Places = () => {
     setLocation(null);
     setView(null);
     setIsLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {
@@ -182,6 +183,7 @@ const Wrapper = styled.main`
       position: absolute;
       left: -1.5rem;
       display: block;
+      z-index: 20;
       height: 3rem;
       width: 3rem;
       font-size: 3rem;

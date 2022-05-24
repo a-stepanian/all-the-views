@@ -20,7 +20,7 @@ const Wrapper = styled.aside`
     display: block;
     width: 60px;
     background-color: var(--black);
-    height: 100vh;
+    height: 100%;
     text-decoration: none;
     color: var(--green);
     display: flex;

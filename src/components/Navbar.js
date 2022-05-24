@@ -62,8 +62,10 @@ const Navbar = () => {
                   : "location link"
               }`}
             >
-              {view.title.length > 14 && width < 800
+              {view.title.length > 14 && width < 900
                 ? `${view.title.slice(0, 14)}...`
+                : view.title.length > 26 && width < 1100
+                ? `${view.title.slice(0, 26)}...`
                 : `${view.title}`}
             </Link>
           </div>
@@ -81,6 +83,7 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   background-color: var(--black);
+  z-index: 10;
   .all-links {
     padding-left: 28px;
     display: flex;

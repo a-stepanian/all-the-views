@@ -64,12 +64,10 @@ const Wrapper = styled.div`
       top: 15px;
       left: 15px;
       width: 0;
-      border-color: var(--off-white);
     }
     .clicked3 {
       top: 15px;
       transform: rotate(-135deg);
-      border-color: var(--off-white);
     }
   }
 

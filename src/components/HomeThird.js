@@ -13,7 +13,7 @@ const HomeThird = () => {
       <aside className="find-your-view-container">
         <div className="text-box">
           <h2>
-            Find your picture perfect{" "}
+            Find the perfect{" "}
             <Link
               to="/places"
               className="places"
@@ -25,7 +25,7 @@ const HomeThird = () => {
           <div className="accent-line"></div>
           <p>
             Discover the hidden gems and the lesser known wonders of the Pacific
-            Northwest.
+            Northwest
           </p>
         </div>
       </aside>
@@ -34,7 +34,7 @@ const HomeThird = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 25px 0 25px;
+  margin: 100px 0;
   background-color: var(--black);
   display: flex;
   flex-direction: column-reverse;
@@ -104,20 +104,23 @@ const Wrapper = styled.section`
     .find-your-view-container {
       margin-top: 0;
       padding-left: 20px;
-      align-items: left;
+      padding-right: 60px;
       display: flex;
       .text-box {
-        align-items: flex-start;
+        align-items: flex-end;
         h2 {
-          font-size: 3.3rem;
-          line-height: 3.6rem;
-          text-align: left;
+          text-align: right;
         }
         p {
-          text-align: left;
+          text-align: right;
         }
       }
     }
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 `;
 
