@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { LogoColumnPark, Loading, Error } from "../components";
+import { Loading, Error } from "../components";
 import { IoCaretBack } from "react-icons/io5";
 import styled from "styled-components";
 import data from "../data";
@@ -81,7 +81,7 @@ const Park = () => {
 
 const Wrapper = styled.main`
   background-color: var(--green);
-  padding: 96px 0 50px;
+  padding: 96px 5% 50px;
 
   /* Park info small screen */
 
@@ -137,13 +137,13 @@ const Wrapper = styled.main`
     }
   }
 
-  /* Places tiles small screen */
+  /* Views tiles small screen */
 
     .card {
       position: relative;
       border-radius: 3px;
       overflow: hidden;
-      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
       img {
         border-radius: 3px;
         display: block;
@@ -187,8 +187,6 @@ const Wrapper = styled.main`
       grid-gap: 20px;
     }
     .card {
-      border: 2px solid var(--white);
-      background-color: var(--white);
       transition: 0.3s;
     }
     .card:hover {
