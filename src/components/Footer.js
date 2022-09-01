@@ -21,7 +21,7 @@ const Footer = () => {
           <BsLinkedin /> Connect with me on LinkedIn
         </a>
         <a
-          href="https://a-stepanian.netlify.app/"
+          href="https://www.alexstepanian.com/"
           target="_blank"
           rel="noreferrer"
         >
